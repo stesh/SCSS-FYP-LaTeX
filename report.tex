@@ -1,0 +1,60 @@
+\include{preamble}
+
+% Uncomment this if you want to print DRAFT in big letters on each page
+%\usepackage{draftwatermark}
+\begin{document}
+
+% Inserts the 'TRINITY COLLEGE' etc. page
+\inserttitlepage
+
+%%%%%%%%%%%%%% Front matter %%%%%%%%%%%%%%
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\declaration
+
+\permissiontolend
+
+\insertabstract
+
+% Need to fiddle with page numbers manually to make them consistent
+\setcounter{page}{4}
+\acknowledgements
+
+\tableofcontents
+
+% Uncomment these if you need them
+%\listoffigures
+
+%\listoftables
+
+%\lstlistoflistings
+
+%\listofalgorithms
+
+%\printnomenclature
+
+
+%%%%%%%%%%%%%%%%%% Body %%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% Write each chapter into a file in the Chapters folder
+% include them with \insertchapter{filename}, e.g.
+% for 'Chapters/introduction.tex', you'd write
+
+\insertchapter{introduction}
+
+
+%%%%%%%%%%%%%% Back matter %%%%%%%%%%%%%%%
+
+\insertbibliography
+
+\appendix
+%\insertchapter{appendix1.tex}
+
+\end{document}

@@ -1,0 +1,44 @@
+% All the commands are defined in this file
+\newcommand \inserttitlepage{\include{titlepage}}
+\newcommand \insertabstract{\include{abstract}}
+\newcommand \declaration{\include{declaration}}
+\newcommand \acknowledgements{\include{acknowledgements}}
+\newcommand \permissiontolend{\include{permissiontolend}}
+\newcommand \insertchapter[1]{\include{chapters/#1}}
+\newcommand \insertbibliography{\bibliography{bibliography.bib}}
+\newcommand \ibidp{(\emph{Ibid.})}
+\newcommand \ibid{\emph{Ibid.}}
+
+\newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
+
+\usepackage{datetime}
+
+% Modify this so that the submission date on the signatures is correct
+\def\drawsig#1{
+    \vbox{\hsize=8cm
+    \kern 2cm \hrule \kern 1ex
+    \hbox to \hsize{\strut\hfil #1, Monday 8$^{\mathrm{th}}$ of April, 2013 \hfil}}
+}
+
+
+% This draws the lines that you sign on for the declaration pages
+\usetikzlibrary{decorations.markings}
+\newcommand{\signedanddate} [3] []{
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[#2-#3, thick, #1] (0,0) to (0.5\linewidth,0);
+            \node[align=left, below] at (1.75,0) {\authorname};
+            \draw[#2-#3, thick, #1] (0.7\linewidth,0) to (\linewidth,0);
+            \node[align=left,below] at(0.729\linewidth,0) {Date};
+        \end{tikzpicture}
+    \end{center}
+}
+
+\newcommand \signed[1]{
+\signedanddate{}{}
+
+}
+
+\newcommand \needcite[1]{\underline{#1}}
+
+\newcommand \abbrev[2]{#1\nomenclature{#1}{#2}}

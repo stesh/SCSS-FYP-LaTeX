@@ -1,0 +1,124 @@
+\documentclass[a4paper, onesided, 12pt]{report}
+
+% set the margins here, if they need to be modified
+\usepackage[a4paper, left=1.3in, right=1.0in]{geometry}
+
+% The linespacing you want
+\linespread{1.4}
+
+% Packages I used for my write-up; you may not need all of them
+
+% Lets you pick fonts. Only works if you compile with xelatex or luatex
+\usepackage[no-math]{fontspec}
+
+% Makes page numbers, TOC and citations clickable
+\usepackage[colorlinks]{hyperref}
+\usepackage{hyperref}
+
+% For block quotes
+\usepackage{attrib}
+
+% Additional mathsy symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Used to make the captions on figures sans serif
+\usepackage{caption}
+
+% For typing linguistic examples
+\usepackage{covington}
+
+% For fancy headers
+\usepackage{fancyhdr}
+
+% For including images
+\usepackage{graphicx}
+
+% For fancy code listings
+\usepackage{listings}
+
+% For tables that span multiple pages elegantly
+\usepackage{longtable}
+
+% For typesetting mathematics in Times New Roman
+%\usepackage{mathptmx}
+
+% For APA-style citations
+\usepackage{natbib}
+
+% For maintaining a list of abbreviations
+\usepackage{nomencl}
+
+% Various tools for documents written in multiple languages
+\usepackage{polyglossia}
+
+% For drawing parse trees
+\usepackage{tikz-qtree}
+\usepackage{tikz-qtree-compat}
+
+% Moar symbols
+\usepackage{stmaryrd}
+
+% For drawing diagrams
+\usepackage{tikz}
+
+% For drawing dependency parses
+\usepackage{tikz-dependency}
+
+% For typesetting algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% For highlighting in the margin things I have to do
+\usepackage{todonotes}
+
+\setdefaultlanguage{english}
+
+% These closely match the SCSS word template fonts
+% Won't work unless you compile with xelatex or luatex
+\setmainfont[Mapping=tex-text]{Times New Roman}
+\setsansfont{Helvetica}
+\setmonofont{Courier New}
+
+\pagestyle{headings}
+%\pagestyle{fancy}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% Layout for citations
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+\bibliographystyle{apa}
+
+% Settings for how you want your code listings to look
+\lstset{
+basicstyle=\ttfamily\scriptsize,
+keywordstyle=\ttfamily,
+numberstyle=\rmfamily\tiny,
+numbers=left,
+commentstyle=\sffamily,
+breaklines=true,
+frame=single,
+stringstyle=\ttfamily,
+identifierstyle=\bfseries,
+lineskip=1mm
+}
+
+\makenomenclature
+
+\input{constants}
+\input{commands}
+
+% For changing the names of the List of Listings, etc.
+\renewcommand*{\lstlistlistingname}{List of Listings}
+\renewcommand*{\contentsname}{Table of Contents}
+\renewcommand*{\nomname}{Abbreviations}
+
+% Make the captions sans serif
+\renewcommand{\captionfont}{\sffamily}
